@@ -16,11 +16,11 @@ button:hover {
 }
   
 button:disabled {
-    background-color: dimgray;
+    background-color: red;
 }
   
 button:disabled:hover {
-    background-color: dimgray;
+    background-color: darkred;
 }
 
 #container {
