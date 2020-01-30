@@ -33,5 +33,25 @@ button:disabled:hover {
     border: 1px solid black;
 }
 
+#reload {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+#playAgain {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    border: solid, 1%, black;
+    margin: 10;
+    /*display:none;*/
+}
+
+button  {
+    text-decoration: none;
+    
+}
+
 
 
