@@ -9,6 +9,7 @@ button {
     padding: 1rem;
     box-shadow: none;
     background-color: aqua;
+    text-decoration: none;
 }
 
 button:hover {
@@ -21,6 +22,10 @@ button:disabled {
   
 button:disabled:hover {
     background-color: darkred;
+}
+
+.hit {
+    background-color: green;
 }
 
 #container {
@@ -40,18 +45,15 @@ button:disabled:hover {
 }
 
 #playAgain {
-    display: grid;
     align-items: center;
     text-align: center;
     border: solid, 1%, black;
     margin: 10;
-    /*display:none;*/
+    grid-column: 2, 3;
+    display:none;
 }
 
-button  {
-    text-decoration: none;
-    
-}
+
 
 
 
