@@ -48,23 +48,25 @@ function checkLocation() {
         
         points++;
     }
-
-    if (location[0] != enemyBattleShipLocation0[0] && location[1] != enemyBattleShipLocation0[1]) {
+    
+    if (location[0] != enemyBattleShipLocation0[0] || location[1] != enemyBattleShipLocation0[1]) {
 
         console.log("Du missade")
 
         this.disabled = true;
     }
 
-    if (location[0] != enemyBattleShipLocation1[0] && location[1] != enemyBattleShipLocation1[1]) {
+    if (location[0] != enemyBattleShipLocation1[0] || location[1] != enemyBattleShipLocation1[1]) {
 
         console.log("Du missade")
 
         this.disabled = true;
-    }    
+    }  
 
     if (points == 2) {
+
         console.log("Yay du vann du fick " + points + " poäng")
+
         document.getElementById('playAgain').style.display = "grid";
     }
 
