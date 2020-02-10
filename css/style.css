@@ -1,5 +1,7 @@
 body {
     display:grid;
+    background-image: url(../img/legobattleship.jpg);
+    background-repeat: repeat-x;
 }
 
 button {
@@ -36,15 +38,19 @@ button:disabled:hover {
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(10, 1fr);
     border: 1px solid black;
+    
 }
 
-#reload {
+#holder {
     display: grid;
+    width: 40vw;
+    height: 10vw;
     grid-template-columns:repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
 #playAgain {
+    grid-column: 2, 3;
     align-items: center;
     text-align: center;
     border: solid, 1%, black;
@@ -53,7 +59,6 @@ button:disabled:hover {
     display:none;
 }
 
-
-
-
-
+.hit {
+    background-color: green;
+}
