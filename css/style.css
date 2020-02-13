@@ -5,7 +5,7 @@ body {
 }
 
 #menu {
-    display:grid;
+    display:flex;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
 }

@@ -1,4 +1,15 @@
-let enemyBattleShipLocation = [[]]
+/*let board = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+];*/
 
 let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
@@ -118,27 +129,29 @@ function checkButtons() {
     let menuButton = 0;
     
     menuButton = this.value;
-
+    
     if (menuButton == 1) {
         document.getElementById('holder').style.display = "none";
         document.getElementById('playerBoard').style.display = "none";
         document.getElementById('gameRules').style.display = "grid";
+        document.getElementById('gameRulesButton').style.display = "none";
     }
 
     if (menuButton == 2) {
         document.getElementById('holder').style.display = "none";
         document.getElementById('playerBoard').style.display = "grid";
         document.getElementById('gameRules').style.display = "none";
-        this.style.backgroundColor = "green";
+        document.getElementById('gameRulesButton').style.display = "flex";
     }
 
     if (menuButton == 3) {
-
+        document.getElementById('gameRulesButton').style.display = "flex"
     }
 
     if (menuButton == 4) {
         document.getElementById('gameBoard').style.display = "grid";
         document.getElementById('playAgain').style.display = "none";
+        document.getElementById('gameRulesButton').style.display = "flex"
 
     }
 
