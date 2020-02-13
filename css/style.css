@@ -41,11 +41,11 @@ button:disabled:hover {
     background-color: green;
 }
 
-#spelregler {
+#gameRulesButton {
 
 }
 
-#coolSol {
+#playGame {
 
 }
 
@@ -53,7 +53,9 @@ button:disabled:hover {
 
 }
 
-
+#gameRules {
+    display: none;
+}
 
 #playerBoard {
     display: grid;

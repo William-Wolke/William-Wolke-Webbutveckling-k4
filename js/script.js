@@ -1,3 +1,5 @@
+let enemyBattleShipLocation = [[]]
+
 let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
 
@@ -46,9 +48,9 @@ function checkLocation() {
 
         this.disabled = true;
         
-        /*this.style.backgroundColor = "green";*/
+        this.style.backgroundColor = "green";
 
-        this.class = "hit";
+        /*this.class = "hit";*/
         
         points++;
     }
@@ -58,9 +60,9 @@ function checkLocation() {
 
         this.disabled = true;
 
-        /*this.style.backgroundColor = "green";*/
+        this.style.backgroundColor = "green";
 
-        this.style.class = "hit";
+        /*this.style.class = "hit";*/
         
         points++;
     }
@@ -72,9 +74,7 @@ function checkLocation() {
 
         this.disabled = true;
 
-        /*this.style.backgroundColor = "green";*/
-
-        this.style.class = "hit";
+        this.style.backgroundColor = "green";
         
         points++;
         }
@@ -87,15 +87,11 @@ function checkLocation() {
 
         this.disabled = true;
 
-        /*this.style.backgroundColor = "green";*/
-
-        this.style.class = "hit";
+        this.style.backgroundColor = "green";
         
         points++;
     }
 
-
-    
     else {
 
         console.log("Du missade lmao sämst")
@@ -107,10 +103,43 @@ function checkLocation() {
 
         console.log("Yay du vann du fick " + points + " poäng")
 
+        document.getElementById('gameBoard').style.display = "none";
         document.getElementById('playAgain').style.display = "grid";
+    }
+}
+
+const menuButtons = document.querySelectorAll(".menu");
+menuButtons.forEach((location) => {
+    location.addEventListener("click", checkButtons);
+});
+
+function checkButtons() {
+
+    let menuButton = 0;
+    
+    menuButton = this.value;
+
+    if (menuButton == 1) {
+        document.getElementById('holder').style.display = "none";
+        document.getElementById('playerBoard').style.display = "none";
+        document.getElementById('gameRules').style.display = "grid";
+    }
+
+    if (menuButton == 2) {
+        document.getElementById('holder').style.display = "none";
+        document.getElementById('playerBoard').style.display = "grid";
+        document.getElementById('gameRules').style.display = "none";
+        this.style.backgroundColor = "green";
+    }
+
+    if (menuButton == 3) {
 
     }
 
-    
-}
+    if (menuButton == 4) {
+        document.getElementById('gameBoard').style.display = "grid";
+        document.getElementById('playAgain').style.display = "none";
 
+    }
+
+}
