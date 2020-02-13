@@ -4,6 +4,17 @@ body {
     background-repeat: repeat-x;
 }
 
+#menu {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: 2, 50%;
+}
+
 button {
     display: block;
     width: 100%;
@@ -30,7 +41,21 @@ button:disabled:hover {
     background-color: green;
 }
 
-#container {
+#spelregler {
+
+}
+
+#coolSol {
+
+}
+
+#omOss {
+
+}
+
+
+
+#playerBoard {
     display: grid;
     margin: auto;
     width: 40vw;
