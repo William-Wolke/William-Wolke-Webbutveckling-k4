@@ -2,17 +2,27 @@ body {
     display:grid;
     background-image: url(../img/legobattleship.jpg);
     background-repeat: repeat-x;
+    
 }
 
-#menu {
+#navBar {
     display:flex;
-    grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-grow: 2;
+    justify-content: center;
+    padding: 1%;
+    
 }
 
 #gameBoard {
     display: grid;
     grid-template-columns: 2, 50%;
+}
+
+.battleshipLocation {
+
 }
 
 button {
@@ -55,6 +65,8 @@ button:disabled:hover {
 
 #gameRules {
     display: none;
+    align-items: center;
+    justify-items: center;
 }
 
 #playerBoard {
@@ -72,8 +84,8 @@ button:disabled:hover {
     display: grid;
     width: 40vw;
     height: 10vw;
-    grid-template-columns:repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 }
 
 #playAgain {
@@ -84,6 +96,15 @@ button:disabled:hover {
     margin: 10;
     grid-column: 2, 3;
     display:none;
+}
+
+#gameInfo {
+    grid-column: 2, 3;
+    align-items: center;
+    text-align: center;
+    border: solid, 1%, black;
+    margin: 10;
+    grid-column: 2, 3;
 }
 
 .hit {

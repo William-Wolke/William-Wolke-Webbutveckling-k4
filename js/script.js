@@ -1,3 +1,5 @@
+let currentLocation = document.getElementById('currenLocation');
+
 /*let board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -60,20 +62,17 @@ function checkLocation() {
         this.disabled = true;
         
         this.style.backgroundColor = "green";
-
-        /*this.class = "hit";*/
         
         points++;
     }
+
     if (location[0] == enemyBattleShipLocation1[0] && location[1] == enemyBattleShipLocation1[1]) {
 
-        console.log("Du träffade")
+        console.log("Du träffade");
 
         this.disabled = true;
 
         this.style.backgroundColor = "green";
-
-        /*this.style.class = "hit";*/
         
         points++;
     }
@@ -81,7 +80,7 @@ function checkLocation() {
     for (let i = 0; i < enemyBattleShipLocation2.length; i++) {
         if (location[0] == enemyBattleShipLocation2[0] && location[0] == enemyBattleShipLocation2[i]) {
 
-        console.log("Du träffade")
+        console.log("Du träffade");
 
         this.disabled = true;
 
@@ -94,7 +93,7 @@ function checkLocation() {
 
     if (location[0] == enemyBattleShipLocation2[0] && location[1] == enemyBattleShipLocation2[1] || location[0] == enemyBattleShipLocation2[0] && location[1] == enemyBattleShipLocation2[1]) {
 
-        console.log("Du träffade")
+        console.log("Du träffade");
 
         this.disabled = true;
 
@@ -105,18 +104,20 @@ function checkLocation() {
 
     else {
 
-        console.log("Du missade lmao sämst")
+        console.log("Du missade lmao sämst");
         this.disabled = true;
 
     }  
 
     if (points == 2) {
 
-        console.log("Yay du vann du fick " + points + " poäng")
-
-        document.getElementById('gameBoard').style.display = "none";
+        console.log("Yay du vann du fick " + points + " poäng");
         document.getElementById('playAgain').style.display = "grid";
     }
+
+    document.getElementById('currentLocation').innerHTML = location[0] + " " + location[1];
+    document.getElementById('currentPoints').innerHTML = points;
+
 }
 
 const menuButtons = document.querySelectorAll(".menu");
@@ -145,14 +146,16 @@ function checkButtons() {
     }
 
     if (menuButton == 3) {
-        document.getElementById('gameRulesButton').style.display = "flex"
+        document.getElementById('gameRulesButton').style.display = "flex";
     }
 
     if (menuButton == 4) {
         document.getElementById('gameBoard').style.display = "grid";
         document.getElementById('playAgain').style.display = "none";
-        document.getElementById('gameRulesButton').style.display = "flex"
-
+        document.getElementById('gameRulesButton').style.display = "flex";
     }
 
+    if (menuButton == 5) {
+        location.reload;
+    }
 }
