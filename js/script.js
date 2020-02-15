@@ -1,6 +1,14 @@
 let currentLocation = document.getElementById('currenLocation');
+let holder = document.getElementById('holder');
+let playerBoard = document.getElementById('playerBoard');
+let gameRules = document.getElementById('gameRules');
+let gameRulesButton = document.getElementById('gameRulesButton');
+let aboutUsButton = document.getElementById('aboutUsButton');
+let aboutUs = document.getElementById('aboutUs');
+let gameBoard = document.getElementById('gameBoard');
+let currentPoints = document.getElementById('currentPoints')
 
-/*let board = [
+let board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -11,7 +19,7 @@ let currentLocation = document.getElementById('currenLocation');
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-];*/
+];
 
 let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
@@ -133,29 +141,29 @@ function checkButtons() {
     menuButton = this.value;
     
     if (menuButton == 1) {
-        document.getElementById('holder').style.display = "none";
-        document.getElementById('playerBoard').style.display = "none";
-        document.getElementById('gameRules').style.display = "grid";
-        document.getElementById('gameRulesButton').style.display = "none";
+        holder.style.display = "none";
+        playerBoard.style.display = "none";
+        gameRules.style.display = "grid";
+        gameRulesButton.style.display = "none";
     }
 
     if (menuButton == 2) {
-        document.getElementById('holder').style.display = "none";
-        document.getElementById('playerBoard').style.display = "grid";
-        document.getElementById('gameRules').style.display = "none";
-        document.getElementById('gameRulesButton').style.display = "flex";
+        holder.style.display = "none";
+        playerBoard.style.display = "grid";
+        gameRules.style.display = "none";
+        gameRulesButton.style.display = "flex";
     }
 
     if (menuButton == 3) {
-        document.getElementById('aboutUsButton').style.display = "none";
-        document.getElementById('aboutUs').style.display = "grid";
+        aboutUsButton.style.display = "none";
+        aboutUs.style.display = "grid";
 
     }
 
     if (menuButton == 4) {
-        document.getElementById('gameBoard').style.display = "grid";
-        document.getElementById('playAgain').style.display = "none";
-        document.getElementById('gameRulesButton').style.display = "flex";
+        gameBoard.style.display = "grid";
+        playAgain.style.display = "none";
+        gameRulesButton.style.display = "flex";
     }
 
     if (menuButton == 5) {
