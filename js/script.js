@@ -18,13 +18,14 @@ console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
 
 let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 
-    if (enemyBattleShipLocation0[0] == enemyBattleShipLocation1[0]) {
-        enemyBattleShipLocation1[0] = Math.floor(Math.random() * 10) + 1;
-        
-    }
+    if (enemyBattleShipLocation0[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation0[1] == enemyBattleShipLocation1[1]) {
+        if (Math.random > 0,5) {
+            enemyBattleShipLocation1[0] = Math.floor(Math.random() * 10) + 1;
+        }
 
-    if (enemyBattleShipLocation0[1] == enemyBattleShipLocation1[1]) {
-        enemyBattleShipLocation1[1] = Math.floor(Math.random() * 10) + 1;
+        else {
+            enemyBattleShipLocation1[1] = Math.floor(Math.random() * 10) + 1;
+        }
     }
 
     console.log(enemyBattleShipLocation1[0] + " " + enemyBattleShipLocation1[1]);
@@ -146,7 +147,9 @@ function checkButtons() {
     }
 
     if (menuButton == 3) {
-        document.getElementById('gameRulesButton').style.display = "flex";
+        document.getElementById('aboutUsButton').style.display = "none";
+        document.getElementById('aboutUs').style.display = "grid";
+
     }
 
     if (menuButton == 4) {
@@ -156,6 +159,6 @@ function checkButtons() {
     }
 
     if (menuButton == 5) {
-        location.reload;
+        location.reload(true);
     }
 }

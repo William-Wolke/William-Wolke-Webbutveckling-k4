@@ -1,6 +1,5 @@
 body {
     display:grid;
-    background-image: url(../img/legobattleship.jpg);
     background-repeat: repeat-x;
     
 }
@@ -55,12 +54,12 @@ button:disabled:hover {
 
 }
 
-#playGame {
+#playGameButton {
 
 }
 
-#omOss {
-
+#aboutUs {
+    display: none;
 }
 
 #gameRules {
@@ -107,6 +106,6 @@ button:disabled:hover {
     grid-column: 2, 3;
 }
 
-.hit {
-    background-color: green;
+#aboutUsButton {
+
 }
