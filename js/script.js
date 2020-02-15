@@ -19,7 +19,7 @@ console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
 let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 
     if (enemyBattleShipLocation0[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation0[1] == enemyBattleShipLocation1[1]) {
-        if (Math.random > 0,5) {
+        if (Math.random >= 0,5) {
             enemyBattleShipLocation1[0] = Math.floor(Math.random() * 10) + 1;
         }
 
