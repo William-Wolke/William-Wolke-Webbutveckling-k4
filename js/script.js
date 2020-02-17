@@ -21,7 +21,9 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
-let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
+console.table(board)
+
+let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
 console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
 
 let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
@@ -157,6 +159,7 @@ function checkButtons() {
     if (menuButton == 3) {
         aboutUsButton.style.display = "none";
         aboutUs.style.display = "grid";
+        gameBoard.style.display = "none";
 
     }
 
