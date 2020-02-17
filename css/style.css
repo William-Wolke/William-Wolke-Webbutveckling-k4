@@ -22,8 +22,6 @@ body {
     margin: auto;
     width: 40vw;
     height: 40vw;
-    
-    
 }*/
 
 button {
@@ -67,11 +65,22 @@ button:disabled:hover {
 
 }*/
 
+#wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
 #aboutUs {
     display: none;
     align-items: center;
 }
 
+#gameInfo {
+    display: block;
+    grid-row: 2/3;
+    align-items: center;
+    text-align: center;
+}
 #gameRules {
     display: none;
     align-items: center;
