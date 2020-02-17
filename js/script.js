@@ -7,8 +7,8 @@ let aboutUsButton = document.getElementById('aboutUsButton');
 let aboutUs = document.getElementById('aboutUs');
 let gameBoard = document.getElementById('gameBoard');
 let currentPoints = document.getElementById('currentPoints')
-
-let board = [
+/*
+var board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -20,9 +20,23 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
+let ship1 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
+let ship2 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
+let ship3 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
+//ship1
+board[ship1[0], ship1[1]] = 1;
+//ship2
+board[ship2[0], ship2[1]] = 1;
+//ship3-horisontal
+for (let index = 0; index < 4; index++) {
+    board[ship3[0], ship3[1]+index] = 1;
+    if (ship3[1]+index > 9) {
+        board[ship3[0], ship3[1]-index] = 1;
+    }
+}
 
 console.table(board)
-
+*/
 let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
 console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
 
@@ -53,7 +67,9 @@ for (let i = 0; i < enemyBattleShipLocation2.length; i++) {
     console.log(enemyBattleShipLocation2[0] + " " + enemyBattleShipLocation2[i]);
 }
 
-let points = 0;
+
+
+let points;
 
 const battleShipLocations = document.querySelectorAll(".battleShipLocation");
 console.log(battleShipLocations);
@@ -138,7 +154,7 @@ menuButtons.forEach((location) => {
 
 function checkButtons() {
 
-    let menuButton = 0;
+    let menuButton;
     
     menuButton = this.value;
     
