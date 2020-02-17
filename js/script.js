@@ -142,8 +142,8 @@ function checkLocation() {
         document.getElementById('playAgain').style.display = "grid";
     }
 
-    document.getElementById('currentLocation').innerHTML = location[0] + " " + location[1];
-    document.getElementById('currentPoints').innerHTML = points;
+    document.getElementById('currentLocation').innerHTML = "Du sköt på " + location[0] + " " + location[1];
+    document.getElementById('currentPoints').innerHTML = "Du har " + points + " poäng";
 
 }
 
