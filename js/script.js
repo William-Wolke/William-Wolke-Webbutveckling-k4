@@ -37,9 +37,11 @@ for (let index = 0; index < 4; index++) {
 
 console.table(board)
 */
+
+//ship0
 let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
 console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
-
+//ship1
 let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 
     if (enemyBattleShipLocation0 == enemyBattleShipLocation1) {
@@ -51,33 +53,51 @@ let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Ma
             enemyBattleShipLocation1[1] = Math.floor(Math.random() * 10) + 1;
         }
     }
-
     console.log(enemyBattleShipLocation1[0] + " " + enemyBattleShipLocation1[1]);
 
-let enemyBattleShipLocation2 = [Math.floor(Math.random() * 10) + 1 , Math.floor(Math.random() * 10) + 1 ,1 ,1];
+//ship2
+let enemyBattleShipLocation2 = [Math.floor(Math.random() * 10) + 1 , Math.floor(Math.random() * 10) + 1 ,0 ,0 ,0];
 
 let j = 0;
 
-for (let i = 2; i < 6; i++) {
-    j = i - 4;
-    if (enemyBattleShipLocation2 == enemyBattleShipLocation0 || enemyBattleShipLocation2 == enemyBattleShipLocation1) {
+if (enemyBattleShipLocation2 == enemyBattleShipLocation0 || enemyBattleShipLocation2 == enemyBattleShipLocation1) {
+        
+    if (Math.random >= 0,5) {
+        enemyBattleShipLocation2[0] = Math.floor(Math.random() * 10) + 1;
+    }
+
+    else {
+        enemyBattleShipLocation2[1] = Math.floor(Math.random() * 10) + 1;
+    }
+}
+
+for (let i = 2; i < 7; i++) {
+    j++;
+    
+    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
+
+    if (enemyBattleShipLocation2[i] > 10) {
+    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[i] - j - 1;
+    }
+
+    if (enemyBattleShipLocation2[0] == enemyBattleShipLocation0[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation0[i] || enemyBattleShipLocation2[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation1[i]) {
+        
+        enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] - j - 1;
+    }
+
+    if (enemyBattleShipLocation2[i] == enemyBattleShipLocation2[i-1]) {
+        enemyBattleShipLocation2[i] --;
+    }
+
+    if (enemyBattleShipLocation2[i] < 1) {
+        console.log(ånaj)
+    }
     
 }
 
-    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
-    if (enemyBattleShipLocation2[i] > 9) {
-        enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] - j;
-    }
-    if (enemyBattleShipLocation2[i] == enemyBattleShipLocation0 || enemyBattleShipLocation2[i] == enemyBattleShipLocation1) {
-        
-    }
-}
-
-for (let i = 0; i < 4; i++) {
+for (let i = 1; i < 5; i++) {
     console.log(enemyBattleShipLocation2[0] + " " + enemyBattleShipLocation2[i]);
 }
-
-
 
 let points = 0;
 
@@ -116,7 +136,8 @@ function checkLocation() {
         hit = true;
     }
 
-    for (let i = 0; i < enemyBattleShipLocation2.length; i++) {
+    for (let i = 0; i < 4; i++) {
+
         if (location[0] == enemyBattleShipLocation2[0] && location[1] == enemyBattleShipLocation2[i]) {
 
         this.disabled = true;
@@ -127,13 +148,12 @@ function checkLocation() {
 
         hit = true;
         }
-
-    
     }
 
     if (hit == true) {
         console.log("Du träffade");
     } 
+
     else {
         console.log("Du missade");
 
@@ -175,7 +195,7 @@ function checkButtons() {
         holder.style.display = "none";
         playerBoard.style.display = "grid";
         gameRules.style.display = "none";
-        gameRulesButton.style.display = "flex";
+        gameRulesButton.style.display = "grid";
     }
 
     if (menuButton == 3) {
@@ -188,10 +208,10 @@ function checkButtons() {
     if (menuButton == 4) {
         gameBoard.style.display = "grid";
         playAgain.style.display = "none";
-        gameRulesButton.style.display = "flex";
+        gameRulesButton.style.display = "grid";
     }
 
     if (menuButton == 5) {
-        location.reload(true);
+        this.location.reload(true);
     }
 }
