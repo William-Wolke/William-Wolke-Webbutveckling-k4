@@ -8,7 +8,7 @@ let aboutUs = document.getElementById('aboutUs');
 let gameBoard = document.getElementById('gameBoard');
 let currentPoints = document.getElementById('currentPoints')
 /*
-var board = [
+let board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -42,7 +42,7 @@ console.log(enemyBattleShipLocation0[0], enemyBattleShipLocation0[1])
 
 let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1];
 
-    if (enemyBattleShipLocation0[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation0[1] == enemyBattleShipLocation1[1]) {
+    if (enemyBattleShipLocation0 == enemyBattleShipLocation1) {
         if (Math.random >= 0,5) {
             enemyBattleShipLocation1[0] = Math.floor(Math.random() * 10) + 1;
         }
@@ -59,17 +59,27 @@ let enemyBattleShipLocation2 = [Math.floor(Math.random() * 10) + 1 , Math.floor(
 let j = 0;
 
 for (let i = 2; i < 6; i++) {
-    j++;
-    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
+    j = i - 4;
+    if (enemyBattleShipLocation2 == enemyBattleShipLocation0 || enemyBattleShipLocation2 == enemyBattleShipLocation1) {
+    
 }
 
-for (let i = 0; i < enemyBattleShipLocation2.length; i++) {
+    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
+    if (enemyBattleShipLocation2[i] > 9) {
+        enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] - j;
+    }
+    if (enemyBattleShipLocation2[i] == enemyBattleShipLocation0 || enemyBattleShipLocation2[i] == enemyBattleShipLocation1) {
+        
+    }
+}
+
+for (let i = 0; i < 4; i++) {
     console.log(enemyBattleShipLocation2[0] + " " + enemyBattleShipLocation2[i]);
 }
 
 
 
-let points;
+let points = 0;
 
 const battleShipLocations = document.querySelectorAll(".battleShipLocation");
 console.log(battleShipLocations);
@@ -81,60 +91,56 @@ function checkLocation() {
     let location = this.value.split(",");
     console.log(location[0]);
     console.log(location[1]);
+
+    let hit = false;
     
     if (location[0] == enemyBattleShipLocation0[0] && location[1] == enemyBattleShipLocation0[1]) {
-
-        console.log("Du träffade");
 
         this.disabled = true;
         
         this.style.backgroundColor = "green";
         
         points++;
+
+        hit = true;
     }
 
     if (location[0] == enemyBattleShipLocation1[0] && location[1] == enemyBattleShipLocation1[1]) {
 
-        console.log("Du träffade");
-
         this.disabled = true;
 
         this.style.backgroundColor = "green";
         
         points++;
+
+        hit = true;
     }
 
     for (let i = 0; i < enemyBattleShipLocation2.length; i++) {
-        if (location[0] == enemyBattleShipLocation2[0] && location[0] == enemyBattleShipLocation2[i]) {
-
-        console.log("Du träffade");
+        if (location[0] == enemyBattleShipLocation2[0] && location[1] == enemyBattleShipLocation2[i]) {
 
         this.disabled = true;
 
         this.style.backgroundColor = "green";
         
         points++;
+
+        hit = true;
         }
+
     
     }
 
-    if (location[0] == enemyBattleShipLocation2[0] && location[1] == enemyBattleShipLocation2[1] || location[0] == enemyBattleShipLocation2[0] && location[1] == enemyBattleShipLocation2[1]) {
-
+    if (hit == true) {
         console.log("Du träffade");
+    } 
+    else {
+        console.log("Du missade");
 
         this.disabled = true;
-
-        this.style.backgroundColor = "green";
-        
-        points++;
     }
 
-    else {
-
-        console.log("Du missade lmao sämst");
-        this.disabled = true;
-
-    }  
+    
 
     if (points == 2) {
 
