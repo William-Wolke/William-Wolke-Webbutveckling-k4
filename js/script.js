@@ -28,12 +28,12 @@ for (let i = 2; i < 7; i++) {
     
     enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
 
-    if (enemyBattleShipLocation2[i] > 10) {
+    if (enemyBattleShipLocation2[i] > 9) {
     enemyBattleShipLocation2[i] = enemyBattleShipLocation2[i] - j - 1;
     }
 
     if (enemyBattleShipLocation2[i] == enemyBattleShipLocation2[i-1]) {
-        enemyBattleShipLocation2[i] --;
+        enemyBattleShipLocation2[i] -=j;
     }
 
     /*if (enemyBattleShipLocation2[i] < 1) {
@@ -59,7 +59,7 @@ let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Ma
     }
     console.log(enemyBattleShipLocation1[0] + " " + enemyBattleShipLocation1[1]);
 
-for (let index = 1; index < 7; index++) {
+for (let index = 1; index < 6; index++) {
     
     if (enemyBattleShipLocation2[0] == enemyBattleShipLocation0[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation0[index] || enemyBattleShipLocation2[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation1[index]) {
         
@@ -170,7 +170,6 @@ function checkButtons() {
     }
 
     if (menuButton == 2) {
-        holder.style.display = "none";
         playerBoard.style.display = "grid";
         gameRulesButton.style.display = "grid";
     }
@@ -187,6 +186,6 @@ function checkButtons() {
     }
 
     if (menuButton == 5) {
-        this.location.reload(true);
+        location.reload();
     }
 }
