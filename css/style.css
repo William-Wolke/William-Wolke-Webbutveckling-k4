@@ -1,6 +1,15 @@
 body {
     width: 100%;
 }   
+
+#container {
+    display:grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 0.1fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
 #navBar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -28,16 +37,10 @@ body {
     display: block;
 }
 
-#container {
-    display:grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 0.1fr 1fr;
-}
-
 button {
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 1%;
     box-shadow: none;
     background-color: #01baef;
     text-decoration: none;

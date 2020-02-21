@@ -24,7 +24,7 @@ let ship1 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) 
 let ship2 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
 let ship3 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
 //ship1
-board[ship1[0], ship1[1]] = 1;
+board[ship1[0]ship1[1]] = 1;
 //ship2
 board[ship2[0], ship2[1]] = 1;
 //ship3-horisontal
@@ -168,7 +168,7 @@ function checkLocation() {
         document.getElementById('playAgain').style.display = "grid";
     }
 
-    document.getElementById('currentLocation').innerHTML = "Du sköt på " + location[0] + " " + location[1];
+    document.getElementById('currentLocation').innerHTML = "Du sköt på " + location[0] + " , " + location[1];
     document.getElementById('currentPoints').innerHTML = "Du har " + points + " poäng";
 
 }
