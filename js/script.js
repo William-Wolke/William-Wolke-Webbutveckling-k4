@@ -7,36 +7,40 @@ let aboutUsButton = document.getElementById('aboutUsButton');
 let aboutUs = document.getElementById('aboutUs');
 let gameBoard = document.getElementById('gameBoard');
 let currentPoints = document.getElementById('currentPoints')
-/*
-let board = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-];
-let ship1 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
-let ship2 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
-let ship3 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
-//ship1
-board[ship1[0]ship1[1]] = 1;
-//ship2
-board[ship2[0], ship2[1]] = 1;
-//ship3-horisontal
-for (let index = 0; index < 4; index++) {
-    board[ship3[0], ship3[1]+index] = 1;
-    if (ship3[1]+index > 9) {
-        board[ship3[0], ship3[1]-index] = 1;
-    }
-}
 
-console.table(board)
-*/
+let enemyBattleShipLocation2 = [Math.floor(Math.random() * 10) + 1 , Math.floor(Math.random() * 10) + 1 ,0 ,0 ,0];
+
+let j = 0;
+
+/*if (enemyBattleShipLocation2 == enemyBattleShipLocation0 || enemyBattleShipLocation2 == enemyBattleShipLocation1) {
+        
+    if (Math.random >= 0,5) {
+        enemyBattleShipLocation2[0] = Math.floor(Math.random() * 10) + 1;
+    }
+
+    else {
+        enemyBattleShipLocation2[1] = Math.floor(Math.random() * 10) + 1;
+    }
+}*/
+
+for (let i = 2; i < 7; i++) {
+    j++;
+    
+    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
+
+    if (enemyBattleShipLocation2[i] > 10) {
+    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[i] - j - 1;
+    }
+
+    if (enemyBattleShipLocation2[i] == enemyBattleShipLocation2[i-1]) {
+        enemyBattleShipLocation2[i] --;
+    }
+
+    /*if (enemyBattleShipLocation2[i] < 1) {
+        console.log(ånaj)
+    }*/
+    
+}
 
 //ship0
 let enemyBattleShipLocation0 = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1];
@@ -55,44 +59,18 @@ let enemyBattleShipLocation1 = [Math.floor(Math.random() * 10) + 1,Math.floor(Ma
     }
     console.log(enemyBattleShipLocation1[0] + " " + enemyBattleShipLocation1[1]);
 
-//ship2
-let enemyBattleShipLocation2 = [Math.floor(Math.random() * 10) + 1 , Math.floor(Math.random() * 10) + 1 ,0 ,0 ,0];
-
-let j = 0;
-
-if (enemyBattleShipLocation2 == enemyBattleShipLocation0 || enemyBattleShipLocation2 == enemyBattleShipLocation1) {
-        
-    if (Math.random >= 0,5) {
-        enemyBattleShipLocation2[0] = Math.floor(Math.random() * 10) + 1;
-    }
-
-    else {
-        enemyBattleShipLocation2[1] = Math.floor(Math.random() * 10) + 1;
-    }
-}
-
-for (let i = 2; i < 7; i++) {
-    j++;
+for (let index = 1; index < 7; index++) {
     
-    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] + j;
-
-    if (enemyBattleShipLocation2[i] > 10) {
-    enemyBattleShipLocation2[i] = enemyBattleShipLocation2[i] - j - 1;
-    }
-
-    if (enemyBattleShipLocation2[0] == enemyBattleShipLocation0[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation0[i] || enemyBattleShipLocation2[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation1[i]) {
+    if (enemyBattleShipLocation2[0] == enemyBattleShipLocation0[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation0[index] || enemyBattleShipLocation2[0] == enemyBattleShipLocation1[0] && enemyBattleShipLocation2[1] == enemyBattleShipLocation1[index]) {
         
-        enemyBattleShipLocation2[i] = enemyBattleShipLocation2[1] - j - 1;
-    }
+        if (Math.random >= 0,5) {
+            enemyBattleShipLocation1[0] = Math.floor(Math.random() * 10) + 1;
+        }
 
-    if (enemyBattleShipLocation2[i] == enemyBattleShipLocation2[i-1]) {
-        enemyBattleShipLocation2[i] --;
+        else {
+            enemyBattleShipLocation1[1] = Math.floor(Math.random() * 10) + 1;
+        }
     }
-
-    if (enemyBattleShipLocation2[i] < 1) {
-        console.log(ånaj)
-    }
-    
 }
 
 for (let i = 1; i < 5; i++) {
@@ -162,7 +140,7 @@ function checkLocation() {
 
     
 
-    if (points == 2) {
+    if (points == 6) {
 
         console.log("Yay du vann du fick " + points + " poäng");
         document.getElementById('playAgain').style.display = "grid";
@@ -185,24 +163,21 @@ function checkButtons() {
     menuButton = this.value;
     
     if (menuButton == 1) {
-        holder.style.display = "none";
-        playerBoard.style.display = "none";
+        //holder.style.display = "none";
+        //playerBoard.style.display = "none";
         gameRules.style.display = "grid";
-        gameRulesButton.style.display = "none";
+        //gameRulesButton.style.display = "none";
     }
 
     if (menuButton == 2) {
         holder.style.display = "none";
         playerBoard.style.display = "grid";
-        gameRules.style.display = "none";
         gameRulesButton.style.display = "grid";
     }
 
     if (menuButton == 3) {
-        aboutUsButton.style.display = "none";
+        //aboutUsButton.style.display = "none";
         aboutUs.style.display = "grid";
-        gameBoard.style.display = "none";
-
     }
 
     if (menuButton == 4) {

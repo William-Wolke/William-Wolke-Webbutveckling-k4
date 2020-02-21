@@ -13,9 +13,9 @@
 <div id="container">
     <div></div>
     <div id="navBar">
-        <div id="gameRulesButton"><button class="menu" value="1">Spelregler</button></div>
-        <div id="playGameButton"><button class="menu" value="2">Spela spelet</button></div>
-        <div id="aboutUsButton"><button class="menu" value="3">Om oss</button></div>
+        <div id="gameRulesButton"><button class="menu" value="1"><h1>Spelregler</h1></button></div>
+        <div id="playGameButton"><button class="menu" value="2"><h1>Spela spelet</h1></button></div>
+        <div id="aboutUsButton"><button class="menu" value="3"><h1>Om oss</h1></button></div>
     </div>
 
 <div></div>
@@ -339,29 +339,31 @@
             <button type="button" class="battleShipLocation" value="10,10" aria-label="ruta 10,10"></button>
         </div>
     </div>
-    
-    <div id="gameRules">
-        <div>
-            <h1>SpelRegler</h1>
-            <p>Klicka på en knapp</p>
+    <div id="wrapper">
+        <div id="gameRules">
+            <div>
+                <h2>SpelRegler</h2>
+                <p>Klicka på en knapp och träffa skeppen.</p>
+            </div>
+        </div>
+        <div id="playAgain" class="menu">   
+            <button href="index.html" value=5>
+            <h2>Tryck här för att spela igen.</h2>
         </div>
     </div>
-    <div id="wrapper">
+    <!--<div id="wrapper">
+        
+    </div>-->
+    <div id="holder">
         <div id="aboutUs">
             <div>
-                <h1>Om oss hej</h1>
+                <h2>Om oss</h2>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, itaque quibusdam voluptatem vero voluptatibus magni quas obcaecati omnis at quod repellendus ducimus dignissimos. Quam commodi laborum nihil explicabo. Asperiores, perspiciatis.</p>
             </div>
         </div>
         <div id="gameinfo">
             <p id="currentLocation"></p>
             <p id="currentPoints"></p>
-        </div>
-    </div>
-    <div id="holder">
-        <div id="playAgain" class="menu">   
-            <button href="index.html" value=5>
-            <p>Tryck här för att spela igen.</p>
         </div>
         
     </div>
