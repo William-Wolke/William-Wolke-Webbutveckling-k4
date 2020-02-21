@@ -1,199 +1,139 @@
 * {
+    margin: 0;
+    padding: 0;
     font-size: 10px;
 }
 
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
 body {
-    background-color: #fbfbff;
+    background-color: #555555;
+    margin: 1rem;
 }   
 
-#container {
-    display:grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 0.1fr 1fr;
-    width: 100%;
-    height: 100%;
-}
-
-#navBar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column: 2/3;
-    width: 100%;
-    align-items: center;
-    padding: 1%;
-    text-align: center;
-    width: 40vw;
-    margin: auto;
-    padding: 3%;
-    column-gap: 5%;
-}
-
-#navbar button {
-    width: 33%;
-    height: 100%;
-}
-
-.menu {
-    background-color: #01baef;
-    
-}
-
-/*.menu a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}*/
-
-h1 {
-    font-size: 2rem;
-}
-
-
-
-button {
-    width: 100%;
-    height: 100%;
-    padding: 1%;
-    box-shadow: none;
-    background-color: #01baef;
-    text-decoration: none;
+button{
+    background-color: cornflowerblue;
+    padding: 3rem;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: #0b4f6c;
 }
-  
+
 button:disabled {
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
     background-color: #931621;
 }
-  
+
 button:disabled:hover {
     background-color: darkred;
 }
 
-.hit {
-    background-color: green;
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-#gameRulesButton {
-    height: 100%;
-}
-
-#playGameButton {
-    height: 100%;
-}
-
-#aboutUsButton {
-    height: 100%;
-}
-
-#wrapper {
-    grid-column: 1, 2;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-}
-
-#aboutUs {
-    display: none;
-    align-items: center;
-    grid-column: 3, 4;
-    grid-row: 2, 3;
-    background-color: ;
-}
-
-#aboutUs h2 {
-    font-size: 4rem;
-}
-
-#aboutUs p {
-    font-size: 2rem;
-}
-
-#gameInfo {
+nav a{
     display: block;
-    grid-row: 2/3;
-    align-items: center;
+    background-color: #fafafa;
+    width: 10rem;
+    padding: 2rem;
+    margin: 0 4.4rem;
+    text-decoration: none;
+    font-size: 2rem;
     text-align: center;
-}
-#gameRules {
-    display: none;
-    align-items: center;
-    justify-items: center;
-    font-size: 3rem;
+    color: #010101; 
+    border-radius: 5rem;
 }
 
-#gameRules h2 {
-    font-size: 4rem;
+nav a:hover{
+    background-color: #cfcfcf;
 }
 
-#gameRules p {
+.container{
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+}
+
+#playerBoard{
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: repeat(10, 6rem);
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+#wrapper{
+    grid-row: 2/3;
+    width: 60rem;
+    cursor: pointer;
+}
+
+#holder{
+    grid-row: 3/4;
+    width: 60rem;
+    cursor: pointer;
+}
+
+#gameRules p,
+#aboutUs p{
     font-size: 2rem;
 }
 
-#playerBoard {
-    grid-row: 2/3;
-    grid-column: 2/3;
-    display: grid;
-    margin: auto;
-    width: 40vw;
-    height: 40vw;
-    grid-template-rows: repeat(10, 1fr);
-    grid-template-columns: repeat(10, 1fr);
-    background-color: #01baef;
+#gameRules h2,
+#aboutUs h2{
+    font-size: 3rem;
+    margin-bottom: 3rem;
 }
 
-#holder {
-    grid-column: 3, 4;
-    display: grid;
-    width: 100%;
-    grid-template-columns:repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+#gameRules,
+#aboutUs{
+    font-size: 3rem;
+    background-color: darkcyan;
+    margin: 2rem 0;
+    padding: 7rem 4rem;
+    border-radius: 2rem;
 }
 
-#playAgain {
-    grid-column: 2, 3;
-    align-items: center;
+#playAgain{
+    display: block;
+    background-color: #fafafa;
+    width: 55rem;
+    padding: 2rem;
+    text-decoration: none;
+    font-size: 3rem;
     text-align: center;
-    margin: 10;
-    display:none;
+    color: #010101; 
+    border-radius: 5rem;
+    margin-top: 2rem;
 }
 
-#gameInfo {
-    grid-row: 2, 3;
-    grid-column: 3, 4;
-    align-items: center;
+#playAgain:hover{
+    background-color: #cfcfcf;
+}
+
+footer{
+    padding: 2.5rem 0;
+    background-color: #fafafa;
     text-align: center;
+    color: rgba(0, 0, 0, .7);
 }
 
-@media screen and (max-width: 1000px){
-    #container {
-        display:grid;
-        grid-template-columns:1fr;
-        grid-template-rows:repeat(3, 1fr);
-        width: 100%;
-        height: 100%;
-    }
 
-    #wrapper {
-        grid-row: 2, 3;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    h1 {
-        font-size: 1rem;
+@media screen and (max-width: 700px){
+    *{
+        font-size: 7px;
     }
 }
 
-@media screen and (max-width: 600px){ 
-    
-    
-    h1 {
-        font-size: 0.5rem;
+@media screen and (max-width: 500px){
+    *{
+        font-size: 5px;
     }
 }

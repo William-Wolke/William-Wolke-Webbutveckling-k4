@@ -2,11 +2,9 @@ let currentLocation = document.getElementById('currenLocation');
 let holder = document.getElementById('holder');
 let playerBoard = document.getElementById('playerBoard');
 let gameRules = document.getElementById('gameRules');
-let gameRulesButton = document.getElementById('gameRulesButton');
-let aboutUsButton = document.getElementById('aboutUsButton');
 let aboutUs = document.getElementById('aboutUs');
 let gameBoard = document.getElementById('gameBoard');
-let currentPoints = document.getElementById('currentPoints')
+let currentPoints = document.getElementById('currentPoints');
 
 let enemyBattleShipLocation2 = [Math.floor(Math.random() * 10) + 1 , Math.floor(Math.random() * 10) + 1 ,0 ,0 ,0];
 
@@ -144,48 +142,5 @@ function checkLocation() {
 
         console.log("Yay du vann du fick " + points + " poäng");
         document.getElementById('playAgain').style.display = "grid";
-    }
-
-    document.getElementById('currentLocation').innerHTML = "Du sköt på " + location[0] + " , " + location[1];
-    document.getElementById('currentPoints').innerHTML = "Du har " + points + " poäng";
-
-}
-
-const menuButtons = document.querySelectorAll(".menu");
-menuButtons.forEach((location) => {
-    location.addEventListener("click", checkButtons);
-});
-
-function checkButtons() {
-
-    let menuButton;
-    
-    menuButton = this.value;
-    
-    if (menuButton == 1) {
-        //holder.style.display = "none";
-        //playerBoard.style.display = "none";
-        gameRules.style.display = "grid";
-        //gameRulesButton.style.display = "none";
-    }
-
-    if (menuButton == 2) {
-        playerBoard.style.display = "grid";
-        gameRulesButton.style.display = "grid";
-    }
-
-    if (menuButton == 3) {
-        //aboutUsButton.style.display = "none";
-        aboutUs.style.display = "grid";
-    }
-
-    if (menuButton == 4) {
-        gameBoard.style.display = "grid";
-        playAgain.style.display = "none";
-        gameRulesButton.style.display = "grid";
-    }
-
-    if (menuButton == 5) {
-        location.reload();
     }
 }
